@@ -73,10 +73,16 @@
 \def\pic#1{\def\@pic{#1}\def\@picwidth{2.5cm}}
 \def\picwidth#1{\def\@picwidth{#1}}
 
-\def\maketitle{\begingroup
-	\Huge\bfseries\@author\hfill\ifdefined\@pic\begin{tikzpicture}
-		\begin{scope}
-			\clip[rnd] (0,0) rectangle coordinate (centerpoint) ++ (\@picwidth,\@picwidth); \node[inner sep=\z@,outer sep=\z@] at (centerpoint) {\includegraphics[width=\@picwidth]{\@pic}};
-		\end{scope}
-	\end{tikzpicture}\fi\break%
-\endgroup}
+\def\maketitle{
+	\begin{minipage}[b][\@picwidth][c]{\dimexpr\textwidth-\@picwidth\relax}%
+		\Huge\bfseries\@author%
+	\end{minipage}%
+	\begin{minipage}[b][\@picwidth][c]{\@picwidth}%
+		\begin{tikzpicture}
+			\begin{scope}
+				\clip[rnd] (0,0) rectangle coordinate (centerpoint) ++ (\@picwidth,\@picwidth);
+				\node[inner sep=\z@,outer sep=\z@] at (centerpoint) {\includegraphics[width=\@picwidth]{\@pic}};
+			\end{scope}
+		\end{tikzpicture}%
+	\end{minipage}\bigskip%
+}
