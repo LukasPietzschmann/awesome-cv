@@ -16,15 +16,20 @@
 \RequirePackage[sfdefault]{josefin}
 \RequirePackage{fontawesome5}
 \RequirePackage{enumitem}
+\RequirePackage[calcwidth]{titlesec}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[
 	tikz,
 ]{smile}
 
+\smile@linewidth2px
+
 \setlist[itemize]{
 	leftmargin=*,
 	itemsep=-.5\parsep
 }
+
+\titleformat{\section}{\bfseries\scshape\Large}{}{}{}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
 
 \newcommand\cv@infocard[2][]{\begin{tikzpicture}[node distance=1ex]
 	\node (T) {#2};
