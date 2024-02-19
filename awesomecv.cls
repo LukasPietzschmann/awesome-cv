@@ -15,10 +15,16 @@
 \RequirePackage{setspace}
 \RequirePackage[sfdefault]{josefin}
 \RequirePackage{fontawesome5}
+\RequirePackage{enumitem}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[
 	tikz,
 ]{smile}
+
+\setlist[itemize]{
+	leftmargin=*,
+	itemsep=-.5\parsep
+}
 
 \newcommand\cv@infocard[2][]{\begin{tikzpicture}[node distance=1ex]
 	\node (T) {#2};
@@ -48,19 +54,19 @@
 \newenvironment{education}{
 	\section*{Education}
 	\def\entry##1##2##3##4{
-		\subsection*{##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}
+		{\bfseries##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}\\
 		\textcolor{accent}{##2}\\
-		##4
+		##4\par\vspace{2\parskip}
 	}
 }{}
 
 \newenvironment{experience}{
 	\section*{Experience}
 	\newenvironment{entry}[3]{% Was, wo, wann
-		\subsection*{##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}
+		{\bfseries##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}\\
 		\textcolor{accent}{##2}\par
 		\itemize
-	}{\enditemize}
+	}{\enditemize\vspace{2\parskip}}
 }{}
 
 \newenvironment{publications}{
