@@ -7,7 +7,7 @@
 \LoadClass[11pt]{article}
 
 \RequirePackage[
-	hmargin=3cm,
+	hmargin=2.3cm,
 	vmargin=2cm
 ]{geometry}
 \RequirePackage{microtype}
@@ -15,7 +15,6 @@
 \RequirePackage{setspace}
 \RequirePackage[sfdefault]{josefin}
 \RequirePackage{fontawesome5}
-\RequirePackage{xurl}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[
 	tikz,
@@ -28,7 +27,7 @@
 	\else
 		\node[roundnode,draw=none,fill=accent!2,left=of T] (S) {\color{accent}#1};
 	\fi
-	\node[roundednode,minimum height=2.2\ht\strutbox,draw=none,fill=accent!10,fit=(S)(T),node on layer=background] {};
+	\node[roundednode,shadow,minimum height=2.2\ht\strutbox,draw=none,fill=accent!10,fit=(S)(T),node on layer=background] {};
 \end{tikzpicture}}
 
 \newenvironment{infos}{
@@ -38,8 +37,7 @@
 	\def\github##1{\info[\faGithub]{\href{https://github.com/##1}{##1}}}
 	\def\linkedin##1{\info[\faLinkedin]{\href{https://www.linkedin.com/in/##1}{##1}}}
 	\def\address##1{\info[\faMapMarker*]{##1}}
-	\def\website##1{\info[\faGlobe]{##1}}
-	\doublespacing
+	\def\website##1{\info[\faGlobe]{\href{https://##1}{##1}}}
 }{}
 
 \newenvironment{skills}{
