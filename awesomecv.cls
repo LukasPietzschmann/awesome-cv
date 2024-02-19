@@ -25,6 +25,7 @@
 ]{smile}
 
 \smile@linewidth2px
+\smile@rounding1.5mm
 
 \setlist[itemize]{
 	leftmargin=*,
@@ -99,5 +100,5 @@
 				\node[inner sep=\z@,outer sep=\z@] at (centerpoint) {\includegraphics[width=\@picwidth]{\@pic}};
 			\end{scope}
 		\end{tikzpicture}%
-	\end{minipage}\bigskip%
+	\end{minipage}\vspace{1cm}%
 }
