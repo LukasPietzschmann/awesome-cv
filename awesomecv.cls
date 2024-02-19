@@ -8,12 +8,14 @@
 
 \RequirePackage[
 	hmargin=2.3cm,
-	vmargin=2cm
+	vmargin=2cm,
+	includefoot,
 ]{geometry}
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 \RequirePackage{setspace}
 \RequirePackage[sfdefault]{josefin}
+\RequirePackage[default,medium,bold,scale=.9]{raleway}
 \RequirePackage{fontawesome5}
 \RequirePackage{enumitem}
 \RequirePackage[calcwidth]{titlesec}
@@ -26,10 +28,11 @@
 
 \setlist[itemize]{
 	leftmargin=*,
-	itemsep=-.5\parsep
+	itemsep=-.5\parsep,
+	topsep=-.5\parsep
 }
 
-\titleformat{\section}{\bfseries\scshape\Large}{}{}{}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
+\titleformat{\section}{\itshape\bfseries\large}{}{}{\josefinmedium\MakeUppercase}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
 
 \newcommand\cv@infocard[2][]{\begin{tikzpicture}[node distance=1ex]
 	\node (T) {#2};
@@ -59,19 +62,19 @@
 \newenvironment{education}{
 	\section*{Education}
 	\def\entry##1##2##3##4{
-		{\bfseries##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}\\
+		{\bfseries##1\hfill\normalsize\normalfont\textcolor{darkgray}{##3}}\\
 		\textcolor{accent}{##2}\\
-		##4\par\vspace{2\parskip}
+		##4\par\bigskip
 	}
 }{}
 
 \newenvironment{experience}{
 	\section*{Experience}
 	\newenvironment{entry}[3]{% Was, wo, wann
-		{\bfseries##1\hfill\normalsize\normalfont\textcolor{gray}{##3}}\\
+		{\bfseries##1\hfill\normalsize\normalfont\textcolor{darkgray}{##3}}\\
 		\textcolor{accent}{##2}\par
 		\itemize
-	}{\enditemize\vspace{2\parskip}}
+	}{\enditemize\bigskip}
 }{}
 
 \newenvironment{publications}{
