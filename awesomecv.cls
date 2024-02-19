@@ -18,6 +18,7 @@
 \RequirePackage[default,medium,bold,scale=.9]{raleway}
 \RequirePackage{fontawesome5}
 \RequirePackage{enumitem}
+\RequirePackage[normalem]{ulem}
 \RequirePackage[calcwidth]{titlesec}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[
@@ -38,6 +39,8 @@
 
 \titleformat{\section}{\itshape\bfseries\large}{}{}{\bigskip\josefinmedium\MakeUppercase}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
 
+\def\cv@href#1#2{\def\ULdepth{.5pt}\def\ULthickness{.1pt}\uline{\href{#1}{#2}}}
+\def\cvhref#1#2{\cv@href{#1}{#2}}
 \newcommand\cv@infocard[2][]{\begin{tikzpicture}[node distance=1ex]
 	\node (T) {#2};
 	\if\relax\detokenize{#1}\relax
