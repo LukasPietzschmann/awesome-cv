@@ -43,9 +43,10 @@
 	\if\relax\detokenize{#1}\relax
 		\coordinate (S) at (T);
 	\else
-		\node[roundnode,draw=none,fill=accent!2,left=of T] (S) {\color{accent}#1};
+		\node[roundnode,draw=none,fill=accent!2,minimum width=4ex,left=of T] (S') {};
+		\node[outer sep=1mm] at (S') (S) {\color{accent}#1};
 	\fi
-	\node[roundednode,shadow,minimum height=2.2\ht\strutbox,draw=none,fill=accent!10,fit=(S)(T),node on layer=background] {};
+	\node[roundednode,shadow,minimum height=5ex,draw=none,fill=accent!10,fit=(S)(T),node on layer=background] {};
 \end{tikzpicture}}
 
 \newenvironment{infos}{
@@ -86,7 +87,7 @@
 	\def\entry##1{\fullcite{##1}}
 }{}
 
-\def\pic#1{\def\@pic{#1}\def\@picwidth{2.5cm}}
+\def\pic#1{\def\@pic{#1}\def\@picwidth{2.75cm}}
 \def\picwidth#1{\def\@picwidth{#1}}
 
 \def\maketitle{
