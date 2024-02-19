@@ -96,7 +96,8 @@
 	\begin{minipage}[b][\@picwidth][c]{\@picwidth}%
 		\begin{tikzpicture}
 			\begin{scope}
-				\clip[rnd] (0,0) rectangle coordinate (centerpoint) ++ (\@picwidth,\@picwidth);
+				\draw[rnd,lw,draw=accent!40!black,save path=\outline] (0,0) rectangle coordinate (centerpoint) ++ (\@picwidth,\@picwidth);
+				\clip[use path=\outline];
 				\node[inner sep=\z@,outer sep=\z@] at (centerpoint) {\includegraphics[width=\@picwidth]{\@pic}};
 			\end{scope}
 		\end{tikzpicture}%
