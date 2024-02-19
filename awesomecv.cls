@@ -29,10 +29,13 @@
 \setlist[itemize]{
 	leftmargin=*,
 	itemsep=-.5\parsep,
-	topsep=-.5\parsep
+	topsep=-.5\parsep,
+	beginpenalty=10000,
+	endpenalty=0,
+	midpenalty=10000,
 }
 
-\titleformat{\section}{\itshape\bfseries\large}{}{}{\josefinmedium\MakeUppercase}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
+\titleformat{\section}{\itshape\bfseries\large}{}{}{\bigskip\josefinmedium\MakeUppercase}[{\color{accent!20!white}\hrule height \smile@linewidth depth \z@ width \titlewidth\relax}]
 
 \newcommand\cv@infocard[2][]{\begin{tikzpicture}[node distance=1ex]
 	\node (T) {#2};
