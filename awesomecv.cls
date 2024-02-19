@@ -49,7 +49,7 @@
 		\node[roundnode,draw=none,fill=accent!2,minimum width=4ex,left=of T] (S') {};
 		\node[outer sep=1mm] at (S') (S) {\color{accent}#1};
 	\fi
-	\node[roundednode,shadow,minimum height=5ex,draw=none,fill=accent!10,fit=(S)(T),node on layer=background] {};
+	\node[roundednode,shadow,minimum height=5ex,draw=none,fill=accent!10,fit=(S')(T),node on layer=background] {};
 \end{tikzpicture}}
 
 \newenvironment{infos}{
