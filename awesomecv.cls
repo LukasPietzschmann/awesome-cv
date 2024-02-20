@@ -14,7 +14,7 @@
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 \RequirePackage{setspace}
-\RequirePackage[sfdefault]{josefin}
+\RequirePackage{josefin}
 \RequirePackage[default,medium,bold,scale=.9]{raleway}
 \RequirePackage{fontawesome5}
 \RequirePackage{enumitem}
